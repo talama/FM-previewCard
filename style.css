@@ -23,3 +23,63 @@
   font-weight: 700;
   src: url("./assets/fonts/fraunces-v31-latin-700.woff2") format("woff2");
 }
+
+:root {
+  /* Colors */
+  --primary-cian: hsl(158, 36%, 37%);
+  --primary-cream: hsl(30, 38%, 92%);
+
+  --neutral-blue-100: hsl(212, 21%, 14%);
+  --neutral-blue-200: hsl(228, 12%, 48%);
+  --white: hsl(0, 0%, 100%);
+
+  /* Fonts */
+  --ff-sans: "Montserrat", sans-serif;
+  --ff-serif: "Fraunces", serif;
+
+  --fw-medium: 500;
+  --fw-bold: 700;
+
+  --fs-400: 0.875;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+body {
+  font-family: var(--ff-sans);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* Attribution */
+.attribution {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.6875rem;
+  text-align: center;
+  font-weight: 500;
+}
+
+.attribution a {
+  text-decoration: none;
+  color: hsl(228, 45%, 44%);
+}
