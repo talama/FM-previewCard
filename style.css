@@ -1,4 +1,3 @@
-/* montserrat-500 - latin */
 @font-face {
   font-display: swap;
   font-family: "Montserrat";
@@ -6,7 +5,7 @@
   font-weight: 500;
   src: url("./assets/fonts/montserrat-v25-latin-500.woff2") format("woff2");
 }
-/* montserrat-700 - latin */
+
 @font-face {
   font-display: swap;
   font-family: "Montserrat";
@@ -15,7 +14,6 @@
   src: url("./assets/fonts/montserrat-v25-latin-700.woff2") format("woff2");
 }
 
-/* fraunces-700 - latin */
 @font-face {
   font-display: swap;
   font-family: "Fraunces";
@@ -27,6 +25,7 @@
 :root {
   /* Colors */
   --primary-cian: hsl(158, 36%, 37%);
+  --primary-cian-dark: hsl(158, 35%, 20%);
   --primary-cream: hsl(30, 38%, 92%);
 
   --neutral-blue-100: hsl(212, 21%, 14%);
@@ -45,6 +44,7 @@
   --fs-700: 2rem;
 }
 
+/* Css reset */
 *,
 *::before,
 *::after {
@@ -70,6 +70,7 @@ svg {
   max-width: 100%;
 }
 
+/* Main */
 .main-section {
   position: absolute;
   top: 50%;
@@ -77,7 +78,7 @@ svg {
   transform: translate(-50%, -50%);
 
   max-width: 1440px;
-  width: 90%;
+  width: 100%;
   max-height: 800px;
   height: 90%;
   background: var(--primary-cream);
@@ -88,9 +89,9 @@ svg {
   justify-items: center;
 }
 
+/* Card */
 .card {
-  width: 600px;
-  height: 500px;
+  max-width: 600px;
   display: grid;
   grid-template-columns: 1fr 1fr;
 
@@ -98,12 +99,7 @@ svg {
   overflow: hidden;
 }
 
-.card-left {
-  background-image: url(./assets/imgs/image-product-desktop.jpg);
-  background-size: cover;
-}
-
-.card-right {
+.product-content {
   background: var(--white);
   padding: 2rem;
 
@@ -164,11 +160,16 @@ svg {
   border: none;
 }
 
+.btn:is(:hover, :focus) {
+  background: var(--primary-cian-dark);
+}
+
 /* Attribution */
 .attribution {
   position: absolute;
-  bottom: 2rem;
+  bottom: 1rem;
   left: 50%;
+  width: 100%;
   transform: translateX(-50%);
   font-size: 0.6875rem;
   text-align: center;
@@ -178,4 +179,27 @@ svg {
 .attribution a {
   text-decoration: none;
   color: hsl(228, 45%, 44%);
+}
+
+/* Mobile media queries; */
+
+@media only screen and (max-width: 600px) {
+  .main-section {
+    padding: 2rem 1rem;
+
+    align-items: start;
+  }
+
+  .card {
+    grid-template-columns: 1fr;
+    max-width: 375px;
+  }
+
+  .product-content {
+    gap: 1rem;
+  }
+
+  .btn {
+    padding: 1rem;
+  }
 }
